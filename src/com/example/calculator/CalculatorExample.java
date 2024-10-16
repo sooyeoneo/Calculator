@@ -42,7 +42,10 @@ public class CalculatorExample {
             System.out.println("연산 결과: " + answer);
             // 연산 결과 출력
             System.out.println("더 계산하시겠습니까? (exit 입력시 종료)");
+            String exitCommand = sc.next();
+            if ("exit".equals(exitCommand)) {
+                break;
+            }
         }
-
     }
 }
