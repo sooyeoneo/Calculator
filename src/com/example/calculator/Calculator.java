@@ -16,8 +16,11 @@ public class Calculator {
                 result = firstNumber * secondNumber;
                 break;
             case '/':
-                result = firstNumber / secondNumber;
-                break;
+                if (secondNumber != 0) {
+                    result = firstNumber / secondNumber;
+                } else {
+                    throw new IllegalArgumentException("0으로 나눌 수 없습니다.");
+                }
         }
     }
 }
