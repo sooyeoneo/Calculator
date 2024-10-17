@@ -47,5 +47,7 @@ public class CalculatorExample {
                 break;
             }
         }
+        sc.close();
+        System.out.println("계산기를 종료합니다.");
     }
 }
