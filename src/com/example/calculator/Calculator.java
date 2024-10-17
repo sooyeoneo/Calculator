@@ -25,5 +25,7 @@ public class Calculator {
             default :
                 throw new IllegalArgumentException("올바른 사칙연산 기호가 아닙니다.");
         }
+
+        return result;
     }
 }
