@@ -42,9 +42,18 @@ public class Calculator {
         return new ArrayList<>(results); // 캡슐화 유지를 위해 새 리스트 반환, 원본 results 리스트 보호
     }
 
-    // results 필드를 설정하는 Setter
+    // results 필드를 설정하는 Setter, 필요할 때 setResults 메서드 호출해서 리스트 수정
     public void setResults(List<Double> results) {
-        this.results = results;
+        this.results = results; // 외부에서 받은 리스트 this.results에 할당
+    }
+
+    // 가장 먼저 저장된 결과를 삭제하는 메서드
+    public void removeResult() {
+        if (!results.isEmpty()) {
+            results.remove(0); // 첫 번째로 저장된 결과 삭제
+        } else {
+            System.out.println("삭제할 결과가 없습니다.");
+        }
     }
 }
 
