@@ -1,5 +1,6 @@
 package Lv2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -10,10 +11,10 @@ public class App {
 
         while (true) {
             System.out.println("첫 번째 숫자를 입력하세요: ");
-            double num1 = sc.nextDouble();
+            double num1 = getValidNumber(sc);
 
             System.out.println("두 번째 숫자를 입력하세요: ");
-            double num2 = sc.nextDouble();
+            double num2 = getValidNumber(sc);
 
             System.out.println("사칙연산 기호를 입력하세요 (+,-,*,/) : ");
             char operator = sc.next().charAt(0);
@@ -28,7 +29,7 @@ public class App {
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료) : ");
             String exitCommand = sc.next();
-            if ("exit".equalsIgnoreCase(exitCommand)) {
+            if ("exit".equalsIgnoreCase(exitCommand)) { // equalsIgnoreCase는 대소문자 구분 안 함.
                 break;
             }
         }
@@ -38,5 +39,18 @@ public class App {
 
         sc.close();
         System.out.println("계산기를 종료합니다.");
+    }
+
+    // 유효한 숫자를 입력받을 때까지 반복하는 메서드
+    public static double getValidNumber(Scanner sc, String message) {
+        while (true) {
+            System.out.println(message);
+            try {
+                return sc.nextDouble();
+            } catch (InputMismatchException e) {
+                System.out.println("잘못된 입력입니다. 숫자를 입력해주세요.");
+                sc.next(); // 잘못된 입력을 제거
+            }
+        }
     }
 }

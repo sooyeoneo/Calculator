@@ -28,7 +28,7 @@ public class Calculator {
                     result = firstNumber / secondNumber;
                 } else {
                     throw new IllegalArgumentException("0으로 나눌 수 없습니다.");
-                }
+                } // IllegalArgumentException은 메서드가 잘못된 매개 변수를 받을 때 발생하는 예외
                 break;
             default:
                 throw new IllegalArgumentException("올바른 사칙연산 기호가 아닙니다.");
