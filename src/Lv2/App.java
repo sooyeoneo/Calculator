@@ -10,11 +10,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("첫 번째 숫자를 입력하세요: ");
-            double num1 = getValidNumber(sc);
-
-            System.out.println("두 번째 숫자를 입력하세요: ");
-            double num2 = getValidNumber(sc);
+            double num1 = getValidNumber(sc, "첫 번째 숫자를 입력하세요: ");
+            double num2 = getValidNumber(sc, "두 번째 숫자를 입력하세요: ");
 
             System.out.println("사칙연산 기호를 입력하세요 (+,-,*,/) : ");
             char operator = sc.next().charAt(0);
